@@ -1,0 +1,8 @@
+# モデルの単体テストコードでのエラー
+ActiveRecord::StatementInvalid:<Br>
+       Mysql2::Error: MySQL client is not connected<Br>
+<Br>
+config/environments/test.rbファイル<Br>
+Rails.application.configure do ~ end内に<Br>
+**config.active_job.queue_adapter = :inline**<Br>
+と記述する。これはActiveStorageを使うことに関連するエラー。
